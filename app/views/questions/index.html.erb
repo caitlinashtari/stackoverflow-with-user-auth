@@ -1,6 +1,6 @@
 <% content_for(:navbar) do %>
 <ul class="right">
-  <li>Hi, <%= current_user.email %>!</li>
+  <li>Hi, <%= current_user.name %>!</li>
   <li><%= link_to "Log Out", log_out_path %></li>
 </ul>
 <% end %>
@@ -10,8 +10,10 @@
 
 <ul>
   <% @questions.each do |question| %>
-  <li><%= question.name %></li>
+  <li><%= link_to question.name, user_question_path(current_user.id, question.id) %></li>
   <li><%= question.description %></li>
 
   <% end %>
 </ul>
+
+<%= link_to "new Question", new_user_question_path(current_user.id) %>

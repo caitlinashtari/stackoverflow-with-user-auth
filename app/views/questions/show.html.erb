@@ -1,0 +1,4 @@
+<h1><%= @question.name %></h1>
+<p><%= @question.description %></p>
+
+<p><%= link_to "Return to Quesions", user_questions_path(current_user.id) %></p>

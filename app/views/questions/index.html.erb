@@ -1,0 +1,17 @@
+<% content_for(:navbar) do %>
+<ul class="right">
+  <li>Hi, <%= current_user.email %>!</li>
+  <li><%= link_to "Log Out", log_out_path %></li>
+</ul>
+<% end %>
+
+
+<h1>Questions</h1>
+
+<ul>
+  <% @questions.each do |question| %>
+  <li><%= question.name %></li>
+  <li><%= question.description %></li>
+
+  <% end %>
+</ul>

@@ -9,6 +9,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <%= link_to "Question Island", "/", class: "brand-logo" %>
+      <%= yield(:navbar) %>
+    </nav>
+    <div class="container">
+      <%= flash[:alert] %>
+      <%= flash[:notice] %>
+      <%= yield %>
+    </div>
   </body>
 </html>

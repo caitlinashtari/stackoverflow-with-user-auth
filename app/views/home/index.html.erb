@@ -1,1 +1,8 @@
-<h1>Index</h1>
+<% content_for(:navbar) do %>
+<ul class="right">
+  <li><%= link_to "login", log_in_path %></li>
+  <li><%= link_to "new user", new_user_path %></li>
+</ul>
+<% end %>
+
+<h1>Hey!</h1>

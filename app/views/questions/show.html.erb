@@ -2,3 +2,7 @@
 <p><%= @question.description %></p>
 
 <p><%= link_to "Return to Quesions", user_questions_path(current_user.id) %></p>
+<p><%= link_to "Edit", edit_user_question_path(current_user.id, @question) %></p>
+<p><%= link_to "Delete", user_question_path(current_user.id, @question),
+                        :data => {:confirm => "Really?",
+                                  :method => "delete"}%></p>
